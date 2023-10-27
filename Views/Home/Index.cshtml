@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Generador de contraseñas #@Context.Session.GetInt32("PassCount")</h1>
+    <h3 class="border border-dark p-2 mx-5">@Context.Session.GetString("PassGen")</h3>
+    <form asp-action="ProcesarPass" asp-controller="Home" method="post">
+        <button class="btn btn-success">Generar</button>
+    </form>
+</div>
